@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { nanoid } from "nanoid";
+import PropTypes from "prop-types";
 
 const Create = ({ users, setusers }) => {
   const [data, setdata] = useState({
@@ -67,6 +68,11 @@ const Create = ({ users, setusers }) => {
       </form>
     </>
   );
+};
+
+Create.prototype = {
+  user: PropTypes.array,
+  setusers: PropTypes.func,
 };
 
 export default Create;
