@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { nanoid } from "nanoid";
 
-const Create = () => {
+const Create = ({ users, setusers }) => {
   const [data, setdata] = useState({
     name: "",
     username: "",
@@ -15,7 +15,8 @@ const Create = () => {
   const SubmitHandaler = (e) => {
     e.preventDefault();
     const d = { ...data, _id: nanoid() };
-    console.log(d);
+    setusers([...users, d]);
+    setdata({ name: "", username: "", profile_url: "" });
   };
 
   return (
