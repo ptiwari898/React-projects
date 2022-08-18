@@ -19,7 +19,7 @@ const Show = ({ users, setusers }) => {
       </div>
     ));
   }
-
+  
   return <ul style={{ width: "400px", overflow: "hidden" }}>{lists}</ul>;
 };
 
