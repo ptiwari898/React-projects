@@ -10,20 +10,15 @@ const Show = ({ users, setusers }) => {
 
   if (users.length > 0) {
     lists = users.map((u) => (
-      <div>
-        <div id="u._id" className="card" style={{ width: "18rem" }}>
+      <div id="u._id" className="col-md-3">
+        <div className="card">
           <button
             onClick={() => DeleteHandler(u._id)}
             type="button"
             class="btn-close"
             aria-label="Close"
           ></button>
-          <img
-            style={{ width: "400px", height: "400px", objectFit: "cover" }}
-            className="card-img-top"
-            src={u.profile_url}
-            alt="..."
-          />
+          <img src={u.profile_url} className="card-img-top" alt="" />
           <div className="card-body">
             <h5 className="card-title">{u.name}</h5>
             <p className="card-text">{u.username}</p>
@@ -33,7 +28,7 @@ const Show = ({ users, setusers }) => {
     ));
   }
 
-  return <ul style={{ width: "400px" }}>{lists}</ul>;
+  return <ul>{lists}</ul>;
 };
 
 Show.prototype = {
